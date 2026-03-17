@@ -1,0 +1,4 @@
+/home/geqingyu/Code/class_design/build/CMakeFiles/SpreadsheetApp.dir
+/home/geqingyu/Code/class_design/build/CMakeFiles/edit_cache.dir
+/home/geqingyu/Code/class_design/build/CMakeFiles/rebuild_cache.dir
+/home/geqingyu/Code/class_design/build/CMakeFiles/SpreadsheetApp_autogen.dir

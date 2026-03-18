@@ -367,6 +367,10 @@ void Spreadsheet::setupMenus()
     QAction *findAction = editMenu->addAction("Find");
     QAction *replaceAction = editMenu->addAction("Replace");
     
+    // 添加帮助按钮
+    QAction *helpAction = editMenu->addAction("Help");
+    connect(helpAction, &QAction::triggered, this, &Spreadsheet::onHelpClicked);
+    
     connect(findAction, &QAction::triggered, this, &Spreadsheet::onFind);
     connect(replaceAction, &QAction::triggered, this, &Spreadsheet::onReplace);
 }
@@ -412,8 +416,8 @@ void Spreadsheet::onCellChanged(int row, int column)
         if (text.startsWith('=')) {
             QString cellAddress = columnName(column) + QString::number(row + 1);
             if (hasCycle(cellAddress, text.mid(1))) {
-                QMessageBox::warning(this, "Error", "输入非法：公式中存在循环引用");
-                item->setText("Error");
+                QMessageBox::warning(this, "错误", "输入非法：公式中存在循环引用");
+                item->setText("#NA");
                 return;
             }
             
@@ -451,32 +455,93 @@ void Spreadsheet::onCellSelected(int row, int column)
 bool Spreadsheet::hasCycle(const QString &cellAddress, const QString &formula)
 {
     calculatingCells.clear();
-    return checkCycle(cellAddress, formula);
+    // 存储当前正在编辑的单元格和其公式
+    QMap<QString, QString> editingCells;
+    // 将当前单元格及其公式添加到editingCells中
+    editingCells[cellAddress] = formula;
+    return checkCycle(cellAddress, formula, editingCells);
 }
 
-bool Spreadsheet::checkCycle(const QString &cellAddress, const QString &formula)
+bool Spreadsheet::isCellInRange(const QString &cellAddress, const QString &startCell, const QString &endCell)
 {
+    // 解析当前单元格
+    QString cellCol;
+    int cellRow = 0;
+    int i = 0;
+    while (i < cellAddress.length() && cellAddress[i].isLetter()) {
+        cellCol.append(cellAddress[i]);
+        i++;
+    }
+    if (i < cellAddress.length()) {
+        cellRow = cellAddress.mid(i).toInt() - 1;
+    }
+    int cellColIndex = columnIndex(cellCol);
+    
+    // 解析起始单元格
+    QString startCol;
+    int startRow = 0;
+    i = 0;
+    while (i < startCell.length() && startCell[i].isLetter()) {
+        startCol.append(startCell[i]);
+        i++;
+    }
+    if (i < startCell.length()) {
+        startRow = startCell.mid(i).toInt() - 1;
+    }
+    int startColIndex = columnIndex(startCol);
+    
+    // 解析结束单元格
+    QString endCol;
+    int endRow = 0;
+    i = 0;
+    while (i < endCell.length() && endCell[i].isLetter()) {
+        endCol.append(endCell[i]);
+        i++;
+    }
+    if (i < endCell.length()) {
+        endRow = endCell.mid(i).toInt() - 1;
+    }
+    int endColIndex = columnIndex(endCol);
+    
+    // 调整起始和结束位置
+    if (startRow > endRow) std::swap(startRow, endRow);
+    if (startColIndex > endColIndex) std::swap(startColIndex, endColIndex);
+    
+    // 检查当前单元格是否在区域内
+    return (cellRow >= startRow && cellRow <= endRow && cellColIndex >= startColIndex && cellColIndex <= endColIndex);
+}
+
+bool Spreadsheet::checkCycle(const QString &cellAddress, const QString &formula, QMap<QString, QString> &editingCells)
+{
+    // 检查当前单元格是否已经在计算链中，如果是，说明存在循环引用
     if (calculatingCells.contains(cellAddress)) {
         return true;
     }
     
+    // 将当前单元格添加到计算链中
     calculatingCells.insert(cellAddress);
     
-    QRegularExpression re("([A-Z]+[0-9]+)");
-    QRegularExpressionMatchIterator it = re.globalMatch(formula);
+    // 匹配直接的单元格引用，例如A1, B2等
+    QRegularExpression cellRe("([A-Z]+[0-9]+)");
+    QRegularExpressionMatchIterator cellIt = cellRe.globalMatch(formula);
     
-    while (it.hasNext()) {
-        QRegularExpressionMatch match = it.next();
+    while (cellIt.hasNext()) {
+        QRegularExpressionMatch match = cellIt.next();
         QString refCell = match.captured(1);
         
+        // 检查引用的单元格是否就是当前单元格，形成自引用
         if (refCell == cellAddress) {
             calculatingCells.remove(cellAddress);
             return true;
         }
         
         QTableWidget *currentTable = getCurrentTable();
-        if (!currentTable) return false;
+        if (!currentTable) {
+            calculatingCells.remove(cellAddress);
+            return false;
+        }
         
+        // 解析引用的单元格地址
         QString colName;
         int rowNum = 0;
         int i = 0;
@@ -490,19 +555,115 @@ bool Spreadsheet::checkCycle(const QString &cellAddress, const QString &formula)
         
         int col = columnIndex(colName);
         if (rowNum >= 0 && rowNum < currentTable->rowCount() && col >= 0 && col < currentTable->columnCount()) {
-            QTableWidgetItem *item = currentTable->item(rowNum, col);
-            if (item) {
-                QString refFormula = item->text();
-                if (refFormula.startsWith('=')) {
-                    if (checkCycle(refCell, refFormula.mid(1))) {
-                        calculatingCells.remove(cellAddress);
-                        return true;
+            // 检查引用的单元格是否正在被编辑
+            QString refFormula;
+            if (editingCells.contains(refCell)) {
+                refFormula = editingCells[refCell];
+            } else {
+                QTableWidgetItem *item = currentTable->item(rowNum, col);
+                if (item) {
+                    refFormula = item->text();
+                    // 将引用的单元格及其公式添加到editingCells中
+                    if (refFormula.startsWith('=')) {
+                        editingCells[refCell] = refFormula.mid(1);
+                    }
+                }
+            }
+            
+            // 如果引用的单元格包含公式，递归检查该公式
+            if (refFormula.startsWith('=')) {
+                if (checkCycle(refCell, refFormula.mid(1), editingCells)) {
+                    calculatingCells.remove(cellAddress);
+                    return true;
+                }
+            }
+        }
+    }
+    
+    // 匹配区域引用，例如A1:B2
+    QRegularExpression rangeRe("([A-Z]+[0-9]+):([A-Z]+[0-9]+)");
+    QRegularExpressionMatchIterator rangeIt = rangeRe.globalMatch(formula);
+    
+    while (rangeIt.hasNext()) {
+        QRegularExpressionMatch match = rangeIt.next();
+        QString startCell = match.captured(1);
+        QString endCell = match.captured(2);
+        
+        // 检查当前单元格是否在区域内，形成自引用
+        if (isCellInRange(cellAddress, startCell, endCell)) {
+            calculatingCells.remove(cellAddress);
+            return true;
+        }
+        
+        // 检查区域中的每个单元格是否引用了当前单元格
+        QTableWidget *currentTable = getCurrentTable();
+        if (!currentTable) {
+            calculatingCells.remove(cellAddress);
+            return false;
+        }
+        
+        // 解析起始和结束单元格
+        QString startCol;
+        int startRow = 0;
+        int i = 0;
+        while (i < startCell.length() && startCell[i].isLetter()) {
+            startCol.append(startCell[i]);
+            i++;
+        }
+        if (i < startCell.length()) {
+            startRow = startCell.mid(i).toInt() - 1;
+        }
+        
+        QString endCol;
+        int endRow = 0;
+        i = 0;
+        while (i < endCell.length() && endCell[i].isLetter()) {
+            endCol.append(endCell[i]);
+            i++;
+        }
+        if (i < endCell.length()) {
+            endRow = endCell.mid(i).toInt() - 1;
+        }
+        
+        int startColIndex = columnIndex(startCol);
+        int endColIndex = columnIndex(endCol);
+        
+        if (startRow > endRow) std::swap(startRow, endRow);
+        if (startColIndex > endColIndex) std::swap(startColIndex, endColIndex);
+        
+        // 检查区域中的每个单元格是否引用了当前单元格
+        for (int row = startRow; row <= endRow; ++row) {
+            for (int col = startColIndex; col <= endColIndex; ++col) {
+                if (row >= 0 && row < currentTable->rowCount() && col >= 0 && col < currentTable->columnCount()) {
+                    QString cellAddr = columnName(col) + QString::number(row + 1);
+                    
+                    // 检查引用的单元格是否正在被编辑
+                    QString refFormula;
+                    if (editingCells.contains(cellAddr)) {
+                        refFormula = editingCells[cellAddr];
+                    } else {
+                        QTableWidgetItem *item = currentTable->item(row, col);
+                        if (item) {
+                            refFormula = item->text();
+                            // 将引用的单元格及其公式添加到editingCells中
+                            if (refFormula.startsWith('=')) {
+                                editingCells[cellAddr] = refFormula.mid(1);
+                            }
+                        }
+                    }
+                    
+                    if (refFormula.startsWith('=')) {
+                        if (checkCycle(cellAddr, refFormula.mid(1), editingCells)) {
+                            calculatingCells.remove(cellAddress);
+                            return true;
+                        }
                     }
                 }
             }
         }
     }
     
+    // 检查完成，将当前单元格从计算链中移除
     calculatingCells.remove(cellAddress);
     return false;
 }
@@ -565,13 +726,8 @@ void Spreadsheet::onFormulaChanged(const QString &text)
             QString cellAddress = columnName(column) + QString::number(row + 1);
             if (hasCycle(cellAddress, text.mid(1))) {
                 QMessageBox::warning(this, "错误", "输入非法：公式中存在循环引用");
-                
-                // 恢复原始值
-                if (item->text().startsWith('=')) {
-                    formulaEdit->setText(item->text());
-                } else {
-                    formulaEdit->clear();
-                }
+                item->setText("#NA");
+                formulaEdit->setText("#NA");
                 return;
             }
             
@@ -610,9 +766,10 @@ void Spreadsheet::setupFormulaBar()
     }
     cellAddressComboBox->addItems(cellAddresses);
     
-    formulaLabel = new QLabel("fx", formulaBarWidget);
-    formulaLabel->setMinimumWidth(30);
-    formulaLabel->setAlignment(Qt::AlignCenter);
+    QPushButton *fxButton = new QPushButton("fx", formulaBarWidget);
+    fxButton->setMinimumWidth(30);
+    fxButton->setCheckable(false);
+    connect(fxButton, &QPushButton::clicked, this, &Spreadsheet::onInsertFunction);
     
     formulaEdit = new QLineEdit(formulaBarWidget);
     formulaEdit->setPlaceholderText("Enter formula here");
@@ -621,7 +778,7 @@ void Spreadsheet::setupFormulaBar()
     connect(cellAddressComboBox, &QComboBox::currentTextChanged, this, &Spreadsheet::onCellAddressChanged);
     
     formulaBarLayout->addWidget(cellAddressComboBox);
-    formulaBarLayout->addWidget(formulaLabel);
+    formulaBarLayout->addWidget(fxButton);
     formulaBarLayout->addWidget(formulaEdit);
     
     formulaBarWidget->setStyleSheet(
@@ -1217,6 +1374,41 @@ void Spreadsheet::onReplace()
     dialog.exec();
 }
 
+void Spreadsheet::onHelpClicked()
+{
+    // 直接显示用户期望的图案
+    QString content = R"(
+   ____     __  .-./`)    .-'''-. ,---.   .--.  ____..--'
+   \   \   /  / \ '_ .') / _     \|    \  |  | |        |
+    \  _. /  ' (_ (_) _)(`' )/`--'|  ,  \ |  | |   .-'  '
+     _( )_ .'    / .  \(_ o _).   |  |\_ \|  | |.-'.'   /
+ ___(_ o _)'___  |-'`|  (_,_). '. |  _( )_\  |    /   _/
+|   |(_,_)'|   | |   ' .---.  \  :| (_ o _)  |  .'._( )_
+|   `-'  / |   `-'  /  \    `-'  ||  (_,_)|  |.'  (_'o._)
+ \      /   \      /    \       / |  |    |  ||    (_,_)|
+  `-..-'     `-..-'      `-...-'  '--'    '--'|_________|
+                     Powered by YJsnz
+            感谢混子发发的技术支持，枧落，New的技术验证
+            本项目为2024届智能学院软件工程专业课程设计项目
+            本项目已在Github上开源，欢迎参与贡献
+            项目地址：https://github.com/YJsnz/class_design
+)";
+    
+    // 创建一个自定义的消息框，使用等宽字体
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Help");
+    
+    // 创建一个标签来显示内容，使用等宽字体
+    QLabel *label = new QLabel(content);
+    QFont font("Courier New", 10);
+    label->setFont(font);
+    label->setWordWrap(false); // 不自动换行，保持图案的原有格式
+    
+    msgBox.layout()->addWidget(label);
+    msgBox.addButton(QMessageBox::Ok);
+    msgBox.exec();
+}
+
 void Spreadsheet::onMergeCells()
 {
     QTableWidget *currentTable = getCurrentTable();
@@ -1549,4 +1741,139 @@ void Spreadsheet::onInsertColumnRight()
     
     // 只更新新插入的列的标题，避免性能问题
     currentTable->setHorizontalHeaderItem(newColumn, new QTableWidgetItem(columnName(newColumn)));
+}
+
+void Spreadsheet::onInsertFunction()
+{
+    // 创建函数选择对话框
+    QDialog *functionDialog = new QDialog(this);
+    functionDialog->setWindowTitle("Insert Function");
+    functionDialog->setGeometry(200, 200, 400, 300);
+    
+    QVBoxLayout *mainLayout = new QVBoxLayout(functionDialog);
+    
+    // 函数类别列表
+    QListWidget *categoryList = new QListWidget(functionDialog);
+    categoryList->addItem("Mathematical");
+    categoryList->addItem("Statistical");
+    categoryList->addItem("Text");
+    categoryList->addItem("Logical");
+    categoryList->setCurrentRow(0);
+    
+    // 函数列表
+    QListWidget *functionList = new QListWidget(functionDialog);
+    
+    // 函数描述
+    QLabel *descriptionLabel = new QLabel("Select a function", functionDialog);
+    descriptionLabel->setWordWrap(true);
+    
+    // 函数参数输入
+    QLineEdit *argsEdit = new QLineEdit(functionDialog);
+    argsEdit->setPlaceholderText("Enter arguments");
+    
+    // 确定和取消按钮
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
+    QPushButton *okButton = new QPushButton("OK", functionDialog);
+    QPushButton *cancelButton = new QPushButton("Cancel", functionDialog);
+    buttonLayout->addStretch();
+    buttonLayout->addWidget(okButton);
+    buttonLayout->addWidget(cancelButton);
+    
+    // 布局
+    QHBoxLayout *listLayout = new QHBoxLayout();
+    listLayout->addWidget(categoryList);
+    listLayout->addWidget(functionList);
+    
+    mainLayout->addLayout(listLayout);
+    mainLayout->addWidget(descriptionLabel);
+    mainLayout->addWidget(argsEdit);
+    mainLayout->addLayout(buttonLayout);
+    
+    // 函数映射
+    QMap<QString, QStringList> functionMap;
+    functionMap["Mathematical"] = {"ABS", "SUM", "AVERAGE", "MIN", "MAX", "SQRT", "POWER", "EXP", "LOG", "LOG10", "SIN", "COS", "TAN"};
+    functionMap["Statistical"] = {"COUNT", "COUNTA", "COUNTIF", "SUMIF", "AVERAGEIF", "MEDIAN", "MODE", "STDEV", "VAR"};
+    functionMap["Text"] = {"CONCAT", "LEFT", "RIGHT", "MID", "LEN", "UPPER", "LOWER", "PROPER"};
+    functionMap["Logical"] = {"IF", "AND", "OR", "NOT", "IFERROR"};
+    
+    // 函数描述映射
+    QMap<QString, QString> descriptionMap;
+    descriptionMap["ABS"] = "Returns the absolute value of a number";
+    descriptionMap["SUM"] = "Adds all the numbers in a range of cells";
+    descriptionMap["AVERAGE"] = "Returns the average (arithmetic mean) of the arguments";
+    descriptionMap["MIN"] = "Returns the minimum value in a set of values";
+    descriptionMap["MAX"] = "Returns the maximum value in a set of values";
+    descriptionMap["SQRT"] = "Returns a positive square root";
+    descriptionMap["POWER"] = "Returns the result of a number raised to a power";
+    descriptionMap["EXP"] = "Returns e raised to the power of a given number";
+    descriptionMap["LOG"] = "Returns the logarithm of a number to a specified base";
+    descriptionMap["LOG10"] = "Returns the base-10 logarithm of a number";
+    descriptionMap["SIN"] = "Returns the sine of an angle";
+    descriptionMap["COS"] = "Returns the cosine of an angle";
+    descriptionMap["TAN"] = "Returns the tangent of an angle";
+    descriptionMap["COUNT"] = "Counts the number of cells that contain numbers";
+    descriptionMap["COUNTA"] = "Counts the number of cells that are not empty";
+    descriptionMap["COUNTIF"] = "Counts the number of cells that meet a criterion";
+    descriptionMap["SUMIF"] = "Adds the cells specified by a given criterion";
+    descriptionMap["AVERAGEIF"] = "Returns the average (arithmetic mean) of all cells that meet a criterion";
+    descriptionMap["MEDIAN"] = "Returns the median of the given numbers";
+    descriptionMap["MODE"] = "Returns the most frequently occurring value in an array or range";
+    descriptionMap["STDEV"] = "Estimates standard deviation based on a sample";
+    descriptionMap["VAR"] = "Estimates variance based on a sample";
+    descriptionMap["CONCAT"] = "Joins two or more text strings into one text string";
+    descriptionMap["LEFT"] = "Returns the first character or characters in a text string, based on the number of characters you specify";
+    descriptionMap["RIGHT"] = "Returns the last character or characters in a text string, based on the number of characters you specify";
+    descriptionMap["MID"] = "Returns the characters from the middle of a text string, given a starting position and length";
+    descriptionMap["LEN"] = "Returns the number of characters in a text string";
+    descriptionMap["UPPER"] = "Converts text to uppercase";
+    descriptionMap["LOWER"] = "Converts text to lowercase";
+    descriptionMap["PROPER"] = "Capitalizes the first letter of each word in a text string";
+    descriptionMap["IF"] = "Returns one value if a condition is true and another value if it's false";
+    descriptionMap["AND"] = "Returns TRUE if all of its arguments are TRUE";
+    descriptionMap["OR"] = "Returns TRUE if any of its arguments are TRUE";
+    descriptionMap["NOT"] = "Reverses the logic of its argument";
+    descriptionMap["IFERROR"] = "Returns a value you specify if a formula evaluates to an error; otherwise, returns the result of the formula";
+    
+    // 加载函数列表
+    auto loadFunctions = [&]() {
+        QString category = categoryList->currentItem()->text();
+        functionList->clear();
+        functionList->addItems(functionMap[category]);
+    };
+    
+    // 初始加载
+    loadFunctions();
+    
+    // 连接信号
+    connect(categoryList, &QListWidget::currentItemChanged, [&](QListWidgetItem *current, QListWidgetItem *previous) {
+        if (current) {
+            loadFunctions();
+        }
+    });
+    
+    connect(functionList, &QListWidget::currentItemChanged, [&](QListWidgetItem *current, QListWidgetItem *previous) {
+        if (current) {
+            QString functionName = current->text();
+            descriptionLabel->setText(descriptionMap[functionName]);
+        }
+    });
+    
+    connect(okButton, &QPushButton::clicked, [&]() {
+        QListWidgetItem *item = functionList->currentItem();
+        if (item) {
+            QString functionName = item->text();
+            QString arguments = argsEdit->text();
+            if (arguments.isEmpty()) {
+                arguments = "";
+            }
+            QString formula = "=" + functionName + "(" + arguments + ")";
+            formulaEdit->setText(formula);
+            functionDialog->accept();
+        }
+    });
+    
+    connect(cancelButton, &QPushButton::clicked, functionDialog, &QDialog::reject);
+    
+    // 显示对话框
+    functionDialog->exec();
 }

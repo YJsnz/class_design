@@ -495,6 +495,12 @@ CMakeFiles/SpreadsheetApp.dir/SpreadsheetApp_autogen/mocs_compilation.cpp.o: Spr
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
   ../src/Cell.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
@@ -999,7 +1005,13 @@ CMakeFiles/SpreadsheetApp.dir/src/Cell.cpp.o: ../src/Cell.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
-  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h
 
 CMakeFiles/SpreadsheetApp.dir/src/FileFormat.cpp.o: ../src/FileFormat.cpp \
   /usr/include/stdc-predef.h \
@@ -1893,6 +1905,12 @@ CMakeFiles/SpreadsheetApp.dir/src/FormulaParser.cpp.o: ../src/FormulaParser.cpp 
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
   ../src/Cell.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
@@ -2392,14 +2410,18 @@ CMakeFiles/SpreadsheetApp.dir/src/Spreadsheet.cpp.o: ../src/Spreadsheet.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
   ../src/Cell.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
   ../src/FileFormat.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
   ../src/FormulaParser.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/QChart \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/qchart.h \
@@ -2981,6 +3003,12 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGridLayout \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
   ../src/Cell.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
@@ -3025,6 +3053,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/qt6/QtCharts/QBarSeries:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsview.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView:
 
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
 
@@ -3358,6 +3390,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCharts/qchartview.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
 /usr/include/c++/11/memory:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
@@ -3424,6 +3460,8 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/tuple:
 
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h:
+
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h:
@@ -3439,6 +3477,8 @@ SpreadsheetApp_autogen/UVLADIE3JM/moc_Spreadsheet.cpp:
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QFileDialog:
 
 SpreadsheetApp_autogen/mocs_compilation.cpp:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem:
 
 /usr/include/c++/11/bits/range_access.h:
 
@@ -3602,10 +3642,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
-/usr/include/c++/11/bits/uses_allocator.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCharts/qchartview.h:
-
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -3661,6 +3697,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
@@ -3737,8 +3775,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
-
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsview.h:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
@@ -3960,6 +3996,10 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qpainter.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
 /usr/include/c++/11/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
@@ -4060,6 +4100,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget:
 
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h:
+
 ../src/FileFormat.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
@@ -4114,8 +4156,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h:
 
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView:
-
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect:
 
 /usr/include/c++/11/bits/vector.tcc:
@@ -4127,7 +4167,3 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/linux/limits.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCharts/QChartView:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qpainter.h:

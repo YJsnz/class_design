@@ -1,9 +1,16 @@
 # SpreadsheetApp - 简易电子表格软件
 
-一个基于 Qt6 的 C++ 电子表格应用程序以完成二级项目课程设计，支持公式计算、单元格格式化、单元格合并和图表生成等功能，能够用简易的功能与成本一定程度上替代excel；
-整体项目仍在不断优化。
-powered by YJsnz
-感谢混子发发的技术支持，枧落和New的技术验证。
+[![GitHub stars](https://img.shields.io/github/stars/YJsnz/class_design.svg?style=social)](https://github.com/YJsnz/class_design/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/YJsnz/class_design.svg?style=social)](https://github.com/YJsnz/class_design/network/members)
+
+一个基于 Qt6 的 C++ 电子表格应用程序，支持公式计算、单元格格式化、单元格合并和图表生成等功能，能够以简易的功能与成本在一定程度上替代 Excel。
+
+**项目地址：** [https://github.com/YJsnz/class_design](https://github.com/YJsnz/class_design)
+
+**技术支持：** 混子发发
+**技术验证：** 枧落、New
+**作者：** YJsnz
+
 ## 项目介绍
 ```
    ____     __  .-./`)    .-'''-. ,---.   .--.  ____..--' 
@@ -15,7 +22,7 @@ powered by YJsnz
 |   `-'  / |   `-'  /  \    `-'  ||  (_,_)\  |.'  (_'o._) 
  \      /   \      /    \       / |  |    |  ||    (_,_)| 
   `-..-'     `-..-'      `-...-'  '--'    '--'|_________| 
-```
+
 
 ## 界面预览
 
@@ -65,56 +72,57 @@ class_design/
 ## 功能特性
 
 ### 基本功能
-- ✅ 支持 32767 行 × 260 列的大容量表格（支持到ZZ列）
-- ✅ 列号采用 Excel 风格命名 (A, B, ..., Z, AA, AB, ..., ZZ)
-- ✅ 多工作表支持，默认3个工作表，可通过"+"按钮添加
-- ✅ 支持多种数据类型：
+- 📊 **大容量表格**：支持 32767 行 × 260 列（支持到 ZZ 列）
+- 📈 **Excel 风格列命名**：采用 A, B, ..., Z, AA, AB, ..., ZZ 命名方式
+- 📋 **多工作表支持**：默认 3 个工作表，可通过 "+" 按钮添加
+- 📁 **多种数据类型**：
   - 整数
   - 浮点数
   - 字符串
   - 公式
 
 ### 公式功能
-- ✅ 支持基本运算符：`+`, `-`, `*`, `/`, `%`
-- ✅ 支持括号改变优先级
-- ✅ 支持单元格引用 (如 A1, B2)
-- ✅ 支持区域引用 (如 A1:B3)
-- ✅ 支持数学函数
-- ✅ 支持统计函数
-- ✅ 循环引用检测，错误时返回 `#NA`
+- ➕ **基本运算符**：`+`, `-`, `*`, `/`, `%`
+- 📝 **括号优先级**：支持括号改变运算优先级
+- 🔗 **单元格引用**：支持单个单元格引用 (如 A1, B2) 和区域引用 (如 A1:B3)
+- 📊 **数学函数**：支持 sqrt, abs, sin, cos, tan, asin, acos, atan, exp, log, log10, pow, round, ceil, floor 等
+- 📈 **统计函数**：支持 sum, avg, max, min, count 等
+- 🔄 **循环引用检测**：自动检测循环引用，错误时返回 `#NA`
+- 📝 **文本函数**：支持 CONCAT, LEFT, RIGHT, MID, UPPER, LOWER, PROPER 等
+- 🧠 **逻辑函数**：支持 IF, AND, OR, NOT 等
 
 ### 格式化功能
-- ✅ 字体设置：
+- 🎨 **字体设置**：
   - 粗体/斜体/下划线
   - 字体大小调整
   - 字体颜色
   - 字体类型
-- ✅ 对齐方式：
+- 📐 **对齐方式**：
   - 左对齐/居中/右对齐
-- ✅ 单元格背景色
-- ✅ 格式刷功能
+- 🌈 **单元格背景色**：支持自定义单元格背景颜色
+- 🖌️ **格式刷**：快速复制格式到其他单元格
 
 ### 数据操作
-- ✅ 文件操作：
+- 💾 **文件操作**：
   - 新建文件
   - 打开文件（支持 .dat, .csv, .xlsx 格式）
   - 保存文件
   - 另存为（支持选择 .dat, .csv, .xlsx 格式）
-- ✅ 数据排序：
+- 🔄 **数据排序**：
   - 升序排序
   - 降序排序
-- ✅ 数据筛选
-- ✅ 查找和替换
-- ✅ 清空单元格
-- ✅ 单元格合并
+- 🔍 **数据筛选**：快速筛选数据
+- 🔎 **查找和替换**：快速查找和替换内容
+- 🗑️ **清空单元格**：一键清空选定单元格
+- 📏 **单元格合并**：支持合并连续单元格
 
 ### 图表功能
-- ✅ 支持多种图表类型：
+- 📊 **多种图表类型**：
   - 柱状图
   - 折线图
   - 饼图
-- ✅ 支持横向和纵向数据选择
-- ✅ 自动提取数据并生成图表
+- 📈 **数据选择**：支持横向和纵向数据选择
+- 🤖 **自动数据提取**：自动提取数据并生成图表
 
 ## 函数使用方式
 
@@ -155,6 +163,25 @@ class_design/
 | `max(range)` | 计算指定区域的最大值 | `=max(C1:C10)` |
 | `min(range)` | 计算指定区域的最小值 | `=min(D1:D10)` |
 | `count(range)` | 计算指定区域的单元格数量 | `=count(E1:E10)` |
+
+### 文本函数
+| 函数 | 描述 | 示例 |
+|------|------|------|
+| `CONCAT(text1, text2, ...)` | 连接多个字符串 | `=CONCAT("Hello", " ", "World")` |
+| `LEFT(text, num_chars)` | 提取字符串左侧指定长度的字符 | `=LEFT("Hello", 3)` |
+| `RIGHT(text, num_chars)` | 提取字符串右侧指定长度的字符 | `=RIGHT("Hello", 2)` |
+| `MID(text, start_num, num_chars)` | 提取字符串中间指定位置和长度的字符 | `=MID("Hello", 2, 3)` |
+| `UPPER(text)` | 将字符串转换为大写 | `=UPPER("hello")` |
+| `LOWER(text)` | 将字符串转换为小写 | `=LOWER("HELLO")` |
+| `PROPER(text)` | 将字符串转换为首字母大写 | `=PROPER("hello world")` |
+
+### 逻辑函数
+| 函数 | 描述 | 示例 |
+|------|------|------|
+| `IF(logical_test, value_if_true, value_if_false)` | 条件判断 | `=IF(A1>10, "大于10", "小于等于10")` |
+| `AND(logical1, logical2, ...)` | 逻辑与运算 | `=AND(A1>10, B1<20)` |
+| `OR(logical1, logical2, ...)` | 逻辑或运算 | `=OR(A1>10, B1<20)` |
+| `NOT(logical)` | 逻辑非运算 | `=NOT(A1>10)` |
 
 ### 单元格引用
 | 引用类型 | 描述 | 示例 |
@@ -267,29 +294,60 @@ Hello World      # 字符串
 
 ## 技术亮点
 
-1. **高效的存储格式** - 支持多种文件格式，包括二进制格式、CSV和XLSX
-2. **递归下降解析器** - 支持复杂公式解析和计算
-3. **循环引用检测** - 防止公式循环依赖
-4. **Qt6 框架** - 现代化的跨平台 GUI 界面
-5. **C++17 特性** - 使用现代 C++ 特性
-6. **图表功能** - 支持多种图表类型，可视化数据
-7. **单元格合并** - 支持合并连续单元格
+1. **高效的存储格式** - 支持多种文件格式，包括二进制格式、CSV 和 XLSX，适应不同场景需求
+2. **递归下降解析器** - 支持复杂公式解析和计算，包括数学、统计、文本和逻辑函数
+3. **智能循环引用检测** - 自动检测直接和间接循环引用，防止公式循环依赖
+4. **Qt6 框架** - 现代化的跨平台 GUI 界面，支持 Windows、Linux 和 macOS
+5. **C++17 特性** - 使用现代 C++ 特性，如智能指针、lambda 表达式等
+6. **图表功能** - 支持多种图表类型，可视化数据，使用 Qt Charts 模块
+7. **单元格合并** - 支持合并连续单元格，提升数据展示效果
+8. **多工作表支持** - 支持多个工作表，方便数据组织和管理
+9. **实时数据更新** - 公式修改后自动更新相关单元格的值
+10. **响应式设计** - 表格支持动态扩展，自动调整行高和列宽
 
 ## 性能指标
 
-- **存储效率**: 支持多种文件格式，适应不同场景
-- **计算速度**: 优化的公式解析器，快速计算
-- **内存占用**: 稀疏存储，仅存储非空单元格
-- **图表渲染**: 使用 Qt Charts 模块，高效渲染图表
+- **存储效率**: 支持多种文件格式，二进制格式占用空间小，CSV 格式兼容性好，XLSX 格式功能丰富
+- **计算速度**: 优化的公式解析器，快速计算复杂表达式，支持批量数据处理
+- **内存占用**: 采用稀疏存储策略，仅存储非空单元格，减少内存使用
+- **图表渲染**: 使用 Qt Charts 模块，高效渲染图表，支持大数据集
+- **界面响应**: 优化的 UI 渲染，即使在处理大量数据时也能保持流畅响应
+- **文件操作**: 支持快速读写文件，处理大型电子表格
 
 ## 注意事项
 
-1. 确保已安装 Qt6 开发环境和 Qt Charts 模块
-2. 公式中不能出现循环引用
-3. 单元格引用范围不能超过表格边界
-4. 错误公式会显示 `#NA`
-5. 图表生成需要选择有效的数据范围
+1. **环境要求**：确保已安装 Qt6 开发环境和 Qt Charts 模块
+2. **循环引用**：公式中不能出现循环引用，否则会显示 `#NA`
+3. **单元格边界**：单元格引用范围不能超过表格边界
+4. **公式错误**：错误的公式会显示 `#NA`
+5. **图表数据**：图表生成需要选择有效的数据范围
+6. **文件格式**：不同文件格式支持的功能可能有所不同
+7. **性能建议**：处理大量数据时，建议使用二进制格式存储以获得更好的性能
 
 ## 许可证
 
-叫声葛哥就给许可
+本项目采用 **MIT 许可证**，详见 LICENSE 文件。
+
+```
+MIT License
+
+Copyright (c) 2026 YJsnz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

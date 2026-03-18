@@ -25,6 +25,9 @@
 #include <QSlider>
 #include <QWidget>
 #include <QGridLayout>
+#include <QListWidget>
+#include <QListWidgetItem>
+#include <QMap>
 #include "Cell.h"
 
 // 前向声明
@@ -46,38 +49,40 @@ public:
     ~Spreadsheet();
 
 private slots:
-    void onCellChanged(int row, int column);
-    void openFile();
-    void saveFile();
-    void saveAsFile();
-    void newFile();
-    void onBoldClicked();
-    void onFontSizeChanged(const QString &size);
-    void onAlignClicked(int alignment);
-    void onSortAscending();
-    void onSortDescending();
-    void onFilter();
-    void onFind();
-    void onReplace();
-    void onFormatBrushClicked();
-    void onCellClickedForFormatBrush(int row, int column);
-    void onClearClicked();
-    void onFontChanged(const QString &font);
-    void onItalicClicked();
-    void onUnderlineClicked();
-    void onFontColorClicked();
-    void onCellColorClicked();
-    void onTabChanged(int index);
-    void onZoomChanged(int value);
-    void onCellSelected(int row, int column);
-    void onFormulaChanged(const QString &text);
-    void onCellAddressChanged(const QString &address);
-    void onMergeCells();
-    void onInsertChart();
-    void onInsertRowAbove();
-    void onInsertRowBelow();
-    void onInsertColumnLeft();
-    void onInsertColumnRight();
+        void onCellChanged(int row, int column);
+        void openFile();
+        void saveFile();
+        void saveAsFile();
+        void newFile();
+        void onBoldClicked();
+        void onFontSizeChanged(const QString &size);
+        void onAlignClicked(int alignment);
+        void onSortAscending();
+        void onSortDescending();
+        void onFilter();
+        void onFind();
+        void onReplace();
+        void onFormatBrushClicked();
+        void onCellClickedForFormatBrush(int row, int column);
+        void onClearClicked();
+        void onFontChanged(const QString &font);
+        void onItalicClicked();
+        void onUnderlineClicked();
+        void onFontColorClicked();
+        void onCellColorClicked();
+        void onTabChanged(int index);
+        void onZoomChanged(int value);
+        void onCellSelected(int row, int column);
+        void onFormulaChanged(const QString &text);
+        void onCellAddressChanged(const QString &address);
+        void onMergeCells();
+        void onInsertChart();
+        void onInsertRowAbove();
+        void onInsertRowBelow();
+        void onInsertColumnLeft();
+        void onInsertColumnRight();
+        void onInsertFunction();
+        void onHelpClicked();
 
 public:
     // 为FormulaParser提供的方法
@@ -117,7 +122,8 @@ private:
     QTableWidget* getCurrentTable();
     void updateSheetButtons();
     bool hasCycle(const QString &cellAddress, const QString &formula);
-    bool checkCycle(const QString &cellAddress, const QString &formula);
+    bool checkCycle(const QString &cellAddress, const QString &formula, QMap<QString, QString> &editingCells);
+    bool isCellInRange(const QString &cellAddress, const QString &startCell, const QString &endCell);
 };
 
 #endif // SPREADSHEET_H

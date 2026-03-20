@@ -10,10 +10,23 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QCategoryAxis>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QTextEdit>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QDialog>
 
 Spreadsheet::Spreadsheet(QWidget *parent)
     : QMainWindow(parent), formatBrushActive(false), currentZoom(100)
 {
+    networkManager = new QNetworkAccessManager(this);
     setupUI();
     setupMenus();
 }
@@ -366,6 +379,10 @@ void Spreadsheet::setupMenus()
     
     QAction *findAction = editMenu->addAction("Find");
     QAction *replaceAction = editMenu->addAction("Replace");
+    
+    // 添加AI助手菜单项
+    QAction *aiAssistantAction = editMenu->addAction("AI Assistant");
+    connect(aiAssistantAction, &QAction::triggered, this, &Spreadsheet::onAIAssistantClicked);
     
     // 添加帮助按钮
     QAction *helpAction = editMenu->addAction("Help");
@@ -1876,4 +1893,125 @@ void Spreadsheet::onInsertFunction()
     
     // 显示对话框
     functionDialog->exec();
+}
+
+void Spreadsheet::onAIAssistantClicked()
+{
+    // 创建AI助手对话框
+    QDialog *aiDialog = new QDialog(this);
+    aiDialog->setWindowTitle("AI Assistant");
+    aiDialog->setGeometry(200, 200, 600, 500);
+    
+    // 创建布局
+    QVBoxLayout *mainLayout = new QVBoxLayout(aiDialog);
+    
+    // 聊天历史显示区域
+    QTextEdit *chatHistory = new QTextEdit();
+    chatHistory->setReadOnly(true);
+    chatHistory->setStyleSheet("background-color: #f5f5f5; padding: 10px;");
+    chatHistory->append("AI Assistant: Hello! I'm your AI assistant. How can I help you today?");
+    mainLayout->addWidget(chatHistory);
+    
+    // 输入区域
+    QHBoxLayout *inputLayout = new QHBoxLayout();
+    QLineEdit *inputEdit = new QLineEdit();
+    inputEdit->setPlaceholderText("Type your message here...");
+    QPushButton *sendButton = new QPushButton("Send");
+    
+    inputLayout->addWidget(inputEdit);
+    inputLayout->addWidget(sendButton);
+    mainLayout->addLayout(inputLayout);
+    
+    // 连接发送按钮
+    connect(sendButton, &QPushButton::clicked, [=]() {
+        QString message = inputEdit->text().trimmed();
+        if (!message.isEmpty()) {
+            // 添加用户消息到聊天历史
+            chatHistory->append("You: " + message);
+            inputEdit->clear();
+            
+            // 构建API请求
+            QUrl url("https://open.bigmodel.cn/api/paas/v4/chat/completions");
+            QNetworkRequest request(url);
+            request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+            
+            // 从环境变量读取API密钥
+            QString apiKey = qgetenv("ZHIPUAI_API_KEY");
+            if (apiKey.isEmpty()) {
+                // 如果环境变量未设置，使用默认值（仅用于开发）
+                apiKey = "869a6d48e26744f6b8d659df5c89901c.bwO13qH1gh9jlD5l";
+            }
+            request.setRawHeader("Authorization", QString("Bearer %1").arg(apiKey).toUtf8());
+            
+            // 构建请求体
+            QJsonObject requestBody;
+            requestBody["model"] = "glm-4.7-flash";
+            
+            QJsonArray messages;
+            QJsonObject systemMessage;
+            systemMessage["role"] = "system";
+            systemMessage["content"] = "You are a helpful AI assistant integrated into a spreadsheet application. You can help users with spreadsheet-related questions, data analysis, formula calculations, and other tasks.";
+            messages.append(systemMessage);
+            
+            QJsonObject userMessage;
+            userMessage["role"] = "user";
+            userMessage["content"] = message;
+            messages.append(userMessage);
+            
+            requestBody["messages"] = messages;
+            requestBody["temperature"] = 0.7;
+            requestBody["max_tokens"] = 1024;
+            
+
+            
+            // 发送请求
+            QNetworkReply *reply = networkManager->post(request, QJsonDocument(requestBody).toJson());
+            
+            // 处理响应
+            connect(reply, &QNetworkReply::finished, [=]() {
+                if (reply->error() == QNetworkReply::NoError) {
+                    QByteArray responseData = reply->readAll();
+                    QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+                    if (jsonDoc.isNull()) {
+                        chatHistory->append("AI Assistant: Error parsing response. Please try again later.");
+                    } else {
+                        QJsonObject jsonObj = jsonDoc.object();
+                        if (jsonObj.contains("choices")) {
+                            QJsonArray choices = jsonObj["choices"].toArray();
+                            if (!choices.isEmpty()) {
+                                QJsonObject choice = choices[0].toObject();
+                                if (choice.contains("message")) {
+                                    QJsonObject messageObj = choice["message"].toObject();
+                                    if (messageObj.contains("content")) {
+                                        QString aiResponse = messageObj["content"].toString();
+                                        chatHistory->append("AI Assistant: " + aiResponse);
+                                    } else {
+                                        chatHistory->append("AI Assistant: No content in response. Please try again later.");
+                                    }
+                                } else {
+                                    chatHistory->append("AI Assistant: No message in response. Please try again later.");
+                                }
+                            } else {
+                                chatHistory->append("AI Assistant: No choices in response. Please try again later.");
+                            }
+                        } else {
+                            chatHistory->append("AI Assistant: No choices field in response. Please try again later.");
+                        }
+                    }
+                } else {
+                    chatHistory->append("AI Assistant: Network error. Please try again later.");
+                }
+                reply->deleteLater();
+            });
+        }
+    });
+    
+    // 按Enter键发送消息
+    connect(inputEdit, &QLineEdit::returnPressed, sendButton, &QPushButton::click);
+    
+    // 显示对话框
+    aiDialog->exec();
+    
+    // 清理
+    delete aiDialog;
 }

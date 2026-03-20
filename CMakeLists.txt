@@ -4,7 +4,7 @@ project(SpreadsheetApp)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Core Charts)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Core Charts Network)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -24,4 +24,4 @@ add_executable(SpreadsheetApp
     src/FileFormat.h
 )
 
-target_link_libraries(SpreadsheetApp PRIVATE Qt6::Widgets Qt6::Core Qt6::Charts)
+target_link_libraries(SpreadsheetApp PRIVATE Qt6::Widgets Qt6::Core Qt6::Charts Qt6::Network)

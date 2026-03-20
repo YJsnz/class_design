@@ -501,11 +501,45 @@ CMakeFiles/SpreadsheetApp.dir/SpreadsheetApp_autogen/mocs_compilation.cpp.o: Spr
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
-  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
+  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
-  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslError \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h
 
 CMakeFiles/SpreadsheetApp.dir/src/Cell.cpp.o: ../src/Cell.cpp \
   /usr/include/stdc-predef.h \
@@ -1011,7 +1045,39 @@ CMakeFiles/SpreadsheetApp.dir/src/Cell.cpp.o: ../src/Cell.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h
 
 CMakeFiles/SpreadsheetApp.dir/src/FileFormat.cpp.o: ../src/FileFormat.cpp \
   /usr/include/stdc-predef.h \
@@ -1911,6 +1977,38 @@ CMakeFiles/SpreadsheetApp.dir/src/FormulaParser.cpp.o: ../src/FormulaParser.cpp 
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
   ../src/Cell.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
@@ -2416,9 +2514,41 @@ CMakeFiles/SpreadsheetApp.dir/src/Spreadsheet.cpp.o: ../src/Spreadsheet.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
-  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
+  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h \
   ../src/FileFormat.h \
@@ -2436,10 +2566,6 @@ CMakeFiles/SpreadsheetApp.dir/src/Spreadsheet.cpp.o: ../src/Spreadsheet.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qfont.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/QLegend \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/qlegend.h \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsWidget \
@@ -2454,8 +2580,6 @@ CMakeFiles/SpreadsheetApp.dir/src/Spreadsheet.cpp.o: ../src/Spreadsheet.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
-  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qrect.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize \
@@ -2498,7 +2622,27 @@ CMakeFiles/SpreadsheetApp.dir/src/Spreadsheet.cpp.o: ../src/Spreadsheet.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/QValueAxis \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/qvalueaxis.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCharts/QCategoryAxis \
-  /usr/include/x86_64-linux-gnu/qt6/QtCharts/qcategoryaxis.h
+  /usr/include/x86_64-linux-gnu/qt6/QtCharts/qcategoryaxis.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkRequest \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkReply \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkreply.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QIODevice \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkRequest \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonDocument \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qjsondocument.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonvalue.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborvalue.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcborcommon.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/quuid.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonArray \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonarray.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit \
+  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h
 
 CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -3009,20 +3153,70 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QMap \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
-  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QList \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+  /usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
+  ../src/Cell.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qcolor.h
 
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qinputmethod.h:
 
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
-
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h:
 
 ../src/main.cpp:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QTextEdit:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonarray.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonObject:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcborcommon.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcborvalue.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonvalue.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonDocument:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkreply.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkReply:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkRequest:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCharts/QCategoryAxis:
 
@@ -3058,11 +3252,37 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsView:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QMargins:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicslayoutitem.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsWidget:
+
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
 
 /usr/include/c++/11/clocale:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlayoutitem.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h:
 
@@ -3101,6 +3321,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 
 /usr/include/c++/11/bits/localefwd.h:
 
@@ -3148,13 +3372,13 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/11/cstring:
-
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qgenericatomic.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QSet:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QJsonArray:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h:
 
@@ -3177,6 +3401,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/wctype.h:
 
 /usr/include/c++/11/optional:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QSize:
+
+/usr/include/c++/11/bits/vector.tcc:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
@@ -3216,6 +3444,8 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/linux/errno.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QUrl:
+
 /usr/include/c++/11/bits/stl_heap.h:
 
 /usr/include/c++/11/bits/std_abs.h:
@@ -3228,9 +3458,15 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/alloca.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qabstractsocket.h:
+
 /usr/include/c++/11/bits/fs_path.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QVBoxLayout:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -3247,6 +3483,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 /usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/c++/11/cstring:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslConfiguration:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h:
 
@@ -3279,6 +3519,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/parse_numbers.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h:
+
+/usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -3348,6 +3592,8 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkrequest.h:
+
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qinputdialog.h:
@@ -3385,6 +3631,12 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/11/chrono:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/quuid.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h:
+
+../src/Cell.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompilerdetection.h:
 
@@ -3433,6 +3685,10 @@ CMakeFiles/SpreadsheetApp.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/QBrush:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qpaintdevice.h:
 
@@ -3498,15 +3754,7 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/shared_ptr.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
-
-/usr/include/c++/11/bits/stl_construct.h:
-
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/QBrush:
 
 /usr/include/c++/11/bit:
 
@@ -3522,10 +3770,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qpoint.h:
 
-/usr/include/c++/11/bits/nested_exception.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/QPen:
@@ -3540,11 +3784,19 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/stl_function.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+
+/usr/include/c++/11/bits/stl_construct.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslcertificate.h:
+
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/c++/11/algorithm:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslsocket.h:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -3604,8 +3856,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/stringfwd.h:
 
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicslayoutitem.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmenubar.h:
@@ -3614,11 +3864,17 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtcpsocket.h:
+
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QDataStream:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/c++/11/bits/basic_string.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCharts/QChartView:
+
+/usr/include/linux/limits.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
@@ -3645,6 +3901,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslError:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -3690,6 +3948,10 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMessageBox:
 
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h:
+
+/usr/include/c++/11/ext/concurrence.h:
+
 /usr/include/c++/11/exception:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QList:
@@ -3700,9 +3962,9 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget:
 
-/usr/include/c++/11/bits/algorithmfwd.h:
-
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qscreen.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
@@ -3744,15 +4006,15 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QSslPreSharedKeyAuthenticator:
+
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
-../src/Cell.cpp:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qeventpoint.h:
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QIODevice:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -3769,10 +4031,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/bits/charconv.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qpointer.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
@@ -3820,8 +4078,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h:
 
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h:
-
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h:
@@ -3838,6 +4094,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qnetworkaccessmanager.h:
+
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qtaggedpointer.h:
 
 /usr/include/c++/11/list:
@@ -3849,8 +4107,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/bits/list.tcc:
 
 /usr/include/c++/11/map:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QHBoxLayout:
 
@@ -3865,8 +4121,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/ratio:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform:
 
 /usr/include/c++/11/ctime:
 
@@ -3888,6 +4142,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtextedit.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h:
@@ -3897,6 +4153,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qhostaddress.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -3912,7 +4170,15 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixelformat.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/QNetworkAccessManager:
+
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qpolygon.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qpixmap.h:
 
@@ -3938,6 +4204,8 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h:
@@ -3950,11 +4218,19 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/sstream:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsondocument.h:
+
 ../src/Spreadsheet.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qitemselectionmodel.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractitemdelegate.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicswidget.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qssl.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/qvalidator.h:
 
@@ -3981,12 +4257,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/asm-generic/errno.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qline.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qpainterpath.h:
 
 /usr/include/c++/11/cwctype:
 
@@ -4024,7 +4294,7 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
-/usr/include/c++/11/bits/fs_dir.h:
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslerror.h:
 
 /usr/include/c++/11/bits/fs_ops.h:
 
@@ -4059,8 +4329,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qcombobox.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QMargins:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
@@ -4102,7 +4370,25 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetwork-config.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QSharedDataPointer:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslconfiguration.h:
+
+/usr/include/c++/11/bits/fs_dir.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qsslpresharedkeyauthenticator.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QMetaType:
+
 ../src/FileFormat.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qjsonobject.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
@@ -4126,8 +4412,6 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCharts/qabstractaxis.h:
 
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant:
-
 /usr/include/c++/11/codecvt:
 
 /usr/include/assert.h:
@@ -4135,35 +4419,3 @@ SpreadsheetApp_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/bits/allocated_ptr.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCharts/QLegend:
-
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsWidget:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qlocale.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicswidget.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qinputdevice.h:
-
-/usr/include/c++/11/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qevent.h:
-
-/usr/include/c++/11/ext/concurrence.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qvector2d.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qvectornd.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtGui/qpointingdevice.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect:
-
-/usr/include/c++/11/bits/vector.tcc:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QSize:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF:
-
-/usr/include/linux/limits.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCharts/QChartView:

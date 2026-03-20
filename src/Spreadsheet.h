@@ -28,6 +28,7 @@
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QMap>
+#include <QNetworkAccessManager>
 #include "Cell.h"
 
 // 前向声明
@@ -83,6 +84,7 @@ private slots:
         void onInsertColumnRight();
         void onInsertFunction();
         void onHelpClicked();
+        void onAIAssistantClicked();
 
 public:
     // 为FormulaParser提供的方法
@@ -109,6 +111,7 @@ private:
     QLineEdit *formulaEdit;
     QLabel *formulaLabel;
     QSet<QString> calculatingCells;
+    QNetworkAccessManager *networkManager;
     
     void setupUI();
     void setupMenus();

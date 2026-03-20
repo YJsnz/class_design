@@ -173,13 +173,14 @@ SpreadsheetApp: CMakeFiles/SpreadsheetApp.dir/src/FormulaParser.cpp.o
 SpreadsheetApp: CMakeFiles/SpreadsheetApp.dir/src/FileFormat.cpp.o
 SpreadsheetApp: CMakeFiles/SpreadsheetApp.dir/build.make
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Charts.so.6.2.4
+SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.2.4
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6OpenGLWidgets.so.6.2.4
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.2.4
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.2.4
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.2.4
-SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.2.4
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libGLX.so
 SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+SpreadsheetApp: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.2.4
 SpreadsheetApp: CMakeFiles/SpreadsheetApp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/geqingyu/Code/class_design/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SpreadsheetApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SpreadsheetApp.dir/link.txt --verbose=$(VERBOSE)

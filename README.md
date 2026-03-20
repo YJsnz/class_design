@@ -1,11 +1,11 @@
-# SpreadsheetApp - 简易电子表格软件
+# Light Excel - 简易电子表格软件
 
 [![GitHub stars](https://img.shields.io/github/stars/YJsnz/class_design.svg?style=social)](https://github.com/YJsnz/class_design/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/YJsnz/class_design.svg?style=social)](https://github.com/YJsnz/class_design/network/members)
 
 ## 项目简介
 
-SpreadsheetApp 是一款基于 Qt6 开发的 C++ 电子表格应用程序，旨在提供轻量级但功能强大的电子表格解决方案。该应用支持公式计算、单元格格式化、单元格合并和图表生成等核心功能，能够以简易的实现和较低的资源占用在一定程度上替代 Excel。
+Light Excel 是一款基于 Qt6 开发的 C++ 电子表格应用程序，旨在提供轻量级但功能强大的电子表格解决方案。该应用支持公式计算、单元格格式化、单元格合并和图表生成等核心功能，能够以简易的实现和较低的资源占用在一定程度上替代 Excel。
 
 **项目地址：** [https://github.com/YJsnz/class_design](https://github.com/YJsnz/class_design)
 

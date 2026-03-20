@@ -1,0 +1,4 @@
+/home/geqingyu/Code/class_design/storage/build/CMakeFiles/CSVCompressor.dir
+/home/geqingyu/Code/class_design/storage/build/CMakeFiles/edit_cache.dir
+/home/geqingyu/Code/class_design/storage/build/CMakeFiles/rebuild_cache.dir
+/home/geqingyu/Code/class_design/storage/build/CMakeFiles/CSVCompressor_autogen.dir

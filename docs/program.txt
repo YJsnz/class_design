@@ -15,6 +15,3 @@ Excel是最常见的电子表格软件，但世界上第一款电子表格——
 4、	公式不允许出现循环引用，能够判断公式是否正常，如果公式错误，则公式返回#NA
 5、	支持常见的表函数，比如区域求和:sum;求平均值:avg
 6、	设计合适的文件格式，完成数据的存储
-
-
-sudo mkdir -p /opt/myfiles && sudo chown $USER:$USER /opt/myfiles

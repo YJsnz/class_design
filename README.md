@@ -54,13 +54,20 @@ class_design/
 │   └── 界面.png            # 界面截图
 ├── launch/                 # 启动脚本
 │   ├── build.sh            # 构建脚本
-│   └── start.sh            # 启动脚本
+│   ├── start.sh            # 启动脚本
+│   └── storage.sh          # 存储压缩测试脚本
 ├── src/                    # 源代码目录
 │   ├── main.cpp            # 程序入口
 │   ├── Spreadsheet.h/.cpp  # 主窗口和 UI 逻辑
 │   ├── Cell.h/.cpp         # 单元格数据模型
 │   ├── FormulaParser.h/.cpp # 公式解析器
 │   └── FileFormat.h/.cpp   # 文件格式处理
+├── storage/                # 存储压缩功能
+│   ├── CMakeLists.txt      # CMake 配置文件
+│   ├── main.cpp            # 程序入口
+│   ├── mainwindow.cpp      # 主窗口和 UI 逻辑
+│   ├── mainwindow.h        # 主窗口头文件
+│   └── mainwindow.ui       # 主窗口 UI 设计
 └── README.md               # 项目说明文档
 ```
 
@@ -71,6 +78,13 @@ class_design/
 3. **Cell** - 单元格类，支持多种数据类型和格式设置
 4. **FormulaParser** - 公式解析器，支持数学表达式和函数
 5. **FileFormat** - 文件格式处理，支持多种文件格式
+
+### 存储压缩模块说明
+
+1. **storage/main.cpp** - 存储压缩功能的程序入口
+2. **storage/mainwindow.cpp** - 存储压缩功能的主窗口和 UI 逻辑，实现多种压缩算法和文件操作
+3. **storage/mainwindow.h** - 存储压缩功能的主窗口头文件
+4. **storage/mainwindow.ui** - 存储压缩功能的主窗口 UI 设计
 
 ## 功能特性
 
@@ -289,6 +303,22 @@ cmake --build . --config Release
 ### 运行程序
 
 构建完成后，可执行文件位于 `build/SpreadsheetApp`
+
+### 运行存储压缩功能
+
+```bash
+# 使用存储压缩测试脚本
+chmod +x launch/storage.sh
+./launch/storage.sh
+
+# 或手动构建和运行
+cd storage
+mkdir -p build
+cd build
+cmake ..
+make
+./CSVCompressor
+```
 
 ## 使用示例
 
